@@ -1,0 +1,32 @@
+{
+  "name": "bytic/newrelic",
+  "description": "Description Composer Package for NewRelic Wrapper",
+  "homepage": "https://github.com/ByTIC/services-newrelic",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ByTIC\\NewRelic\\": "src/"
+    },
+    "classmap": [
+      "legacy"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ByTIC\\NewRelic\\Tests\\": "tests/src"
+    }
+  },
+  "require": {
+    "php": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2",
+    "mockery/mockery": "^1.0"
+  }
+}
