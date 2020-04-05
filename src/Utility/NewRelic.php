@@ -39,6 +39,11 @@ class NewRelic
         static::getAgent()->captureParams();
     }
 
+    public static function initFromEnviroment()
+    {
+        InitFromEnviroment::init();
+    }
+
     /**
      * @param null $handler
      * @return null|NewRelicAgent

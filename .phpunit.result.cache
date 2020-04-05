@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":194:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:2:{s:66:"ByTIC\NewRelic\Tests\Utility\NewRelicTest::test_initFromEnviroment";d:0.032;s:52:"ByTIC\NewRelic\Tests\Utility\NewRelicTest::test_init";d:0.055;}}}
