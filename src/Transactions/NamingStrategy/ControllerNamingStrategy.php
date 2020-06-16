@@ -28,12 +28,34 @@ class ControllerNamingStrategy
 
             return implode('/', $name);
         }
+
         $controller = $request->getAttribute('_controller');
         if (empty($controller)) {
             return 'Unknown controller';
         }
-        if (\is_object($controller)) {
-            return 'Callback controller: '.\get_class($controller);
+
+        if ($controller instanceof \Closure) {
+            return 'Closure controller';
         }
+
+        if (\is_object($controller)) {
+            if (\method_exists($controller, '__invoke')) {
+                return 'Callback controller: ' . \get_class($controller) . '::__invoke()';
+            }
+        }
+
+        if (\is_callable($controller)) {
+            if (\is_array($controller)) {
+                if (\is_object($controller[0])) {
+                    $controller[0] = \get_class($controller[0]);
+                }
+
+                $controller = \implode('::', $controller);
+            }
+
+            return 'Callback controller: ' . $controller . '()';
+        }
+
+        return $controller;
     }
 }
