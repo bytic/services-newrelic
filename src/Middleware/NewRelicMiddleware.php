@@ -1,9 +1,8 @@
 <?php
 
-namespace Nip\NewRelic\Middleware;
+namespace ByTIC\NewRelic\Middleware;
 
 use ByTIC\NewRelic\NewRelicAgent;
-use Nip\DebugBar\DebugBar;
 use Nip\Http\ServerMiddleware\Middlewares\ServerMiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

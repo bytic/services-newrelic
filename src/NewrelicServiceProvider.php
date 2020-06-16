@@ -7,7 +7,7 @@ use Nip\Container\ServiceProviders\Providers\AbstractServiceProvider;
 use Nip\Container\ServiceProviders\Providers\BootableServiceProviderInterface;
 use Nip\Http\Kernel\Kernel;
 use Nip\Http\Kernel\KernelInterface;
-use Nip\NewRelic\Middleware\NewRelicMiddleware;
+use ByTIC\NewRelic\Middleware\NewRelicMiddleware;
 
 /**
  * Class NewrelicServiceProvider
@@ -35,6 +35,7 @@ class NewrelicServiceProvider extends AbstractServiceProvider implements Bootabl
     public function register()
     {
         $this->registerAgent();
+        $this->registerMiddleware();
     }
 
     protected function registerAgent()
