@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\NewRelic\Traits;
+namespace ByTIC\NewRelic\Agent\Traits;
 
 /**
  * Trait InstalledTrait
- * @package ByTIC\NewRelic\Traits
+ * @package ByTIC\NewRelic\Agent\Traits
  */
 trait InstalledTrait
 {

@@ -1,4 +1,4 @@
-# LibTIC Common
+# NewRelic Service Provider
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bytic/newrelic.svg?style=flat-square)](https://packagist.org/packages/bytic/newrelic)
 [![Latest Stable Version](https://poser.pugx.org/bytic/newrelic/v/stable)](https://packagist.org/packages/bytic/newrelic)
@@ -10,3 +10,10 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/bytic/newrelic.svg?style=flat-square)](https://scrutinizer-ci.com/g/bytic/newrelic)
 [![StyleCI](https://styleci.io/repos/170641790/shield?branch=master)](https://styleci.io/repos/170641790)
 [![Total Downloads](https://img.shields.io/packagist/dt/bytic/newrelic.svg?style=flat-square)](https://packagist.org/packages/bytic/newrelic)
+
+### Inspiration
+https://github.com/In-Touch/laravel-newrelic
+https://github.com/In-Touch/newrelic
+https://github.com/ekino/EkinoNewRelicBundle
+https://github.com/easytaxibr/newrelic
+https://github.com/neeckeloo/NewRelic

@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\NewRelic\Traits;
+namespace ByTIC\NewRelic\Agent\Traits;
 
 use ByTIC\NewRelic\Transactions\NamingStrategy\ControllerNamingStrategy;
 use Nip\Request;
@@ -8,7 +8,7 @@ use Psr\Http\Message\RequestInterface;
 
 /**
  * Trait HasTransactionsTrait
- * @package ByTIC\NewRelic\Traits
+ * @package ByTIC\NewRelic\Agent\Traits
  */
 trait HasTransactionsTrait
 {

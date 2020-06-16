@@ -2,6 +2,7 @@
 
 namespace ByTIC\NewRelic\Utility;
 
+use ByTIC\NewRelic\Config\Config;
 use ByTIC\NewRelic\NewRelicAgent;
 
 /**
@@ -17,6 +18,8 @@ class NewRelic
      * @var null|NewRelicAgent
      */
     protected static $agent = null;
+
+    protected static $config = null;
 
     /**
      * @param $method
@@ -36,19 +39,13 @@ class NewRelic
     {
         static::getAgent()->setLicence($licence);
         static::getAgent()->setAppName($name);
-        static::getAgent()->captureParams();
-    }
-
-    public static function initFromEnviroment()
-    {
-        InitFromEnviroment::init();
     }
 
     /**
      * @param null $handler
      * @return null|NewRelicAgent
      */
-    protected static function getAgent($handler = null)
+    public static function getAgent($handler = null)
     {
         if (self::$agent === null) {
             static::initAgent($handler);
@@ -67,10 +64,33 @@ class NewRelic
 
 
     /**
-     * @param null $agent
+     * @param NewRelicAgent $agent
      */
     public static function setAgent($agent)
     {
+        if ($agent) {
+            $agent->setConfig(static::getConfig());
+        }
         self::$agent = $agent;
+    }
+
+    /**
+     * @return Config
+     */
+    protected static function getConfig()
+    {
+        if (self::$config === null) {
+            self::$config = Config::autoInit();
+        }
+
+        return self::$config;
+    }
+
+    /**
+     * @param $config
+     */
+    public static function setConfig($config)
+    {
+        self::$config = $config;
     }
 }

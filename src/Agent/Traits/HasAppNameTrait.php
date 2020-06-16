@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\NewRelic\Traits;
+namespace ByTIC\NewRelic\Agent\Traits;
 
 /**
  * Trait HasAppNameTrait
- * @package ByTIC\NewRelic\Traits
+ * @package ByTIC\NewRelic\Agent\Traits
  */
 trait HasAppNameTrait
 {

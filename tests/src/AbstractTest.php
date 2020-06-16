@@ -2,6 +2,7 @@
 
 namespace ByTIC\NewRelic\Tests;
 
+use ByTIC\NewRelic\Utility\NewRelic;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -10,4 +11,10 @@ use PHPUnit\Framework\TestCase;
  */
 abstract class AbstractTest extends TestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+        NewRelic::setConfig(null);
+        NewRelic::setAgent(null);
+    }
 }

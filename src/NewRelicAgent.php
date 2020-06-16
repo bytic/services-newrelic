@@ -3,12 +3,6 @@
 namespace ByTIC\NewRelic;
 
 use ByTIC\NewRelic\Handler\Handler;
-use ByTIC\NewRelic\Traits\HasAppNameTrait;
-use ByTIC\NewRelic\Traits\HasHandlerTrait;
-use ByTIC\NewRelic\Traits\HasLicenseTrait;
-use ByTIC\NewRelic\Traits\HasParamsTrait;
-use ByTIC\NewRelic\Traits\HasTransactionsTrait;
-use ByTIC\NewRelic\Traits\InstalledTrait;
 
 /**
  * Class NewRelicAgent
@@ -16,12 +10,13 @@ use ByTIC\NewRelic\Traits\InstalledTrait;
  */
 class NewRelicAgent
 {
-    use HasAppNameTrait;
-    use HasHandlerTrait;
-    use HasLicenseTrait;
-    use HasParamsTrait;
-    use HasTransactionsTrait;
-    use InstalledTrait;
+    use Agent\Traits\HasAppNameTrait;
+    use Agent\Traits\HasConfigTrait;
+    use Agent\Traits\HasHandlerTrait;
+    use Agent\Traits\HasLicenseTrait;
+    use Agent\Traits\HasParamsTrait;
+    use Agent\Traits\HasTransactionsTrait;
+    use Agent\Traits\InstalledTrait;
 
     /**
      * Allows pass-through if NewRelic is not installed (default) or optionally throws a runtime exception is the
@@ -39,17 +34,5 @@ class NewRelicAgent
             throw new \RuntimeException('NewRelic PHP Agent does not appear to be installed');
         }
         $this->bootHandler($handler);
-    }
-
-    /**
-     * @param $name
-     * @param $licence
-     */
-    public static function init($name, $licence)
-    {
-        if (self::isLoaded()) {
-            self::setAppname($name, $licence);
-            newrelic_capture_params();
-        }
     }
 }

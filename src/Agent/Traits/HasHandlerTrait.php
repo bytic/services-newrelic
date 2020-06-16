@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\NewRelic\Traits;
+namespace ByTIC\NewRelic\Agent\Traits;
 
 use ByTIC\NewRelic\Handler\DefaultHandler;
 use ByTIC\NewRelic\Handler\Handler;
@@ -8,7 +8,7 @@ use ByTIC\NewRelic\Handler\NullHandler;
 
 /**
  * Trait HasHandlerTrait
- * @package ByTIC\NewRelic\Traits
+ * @package ByTIC\NewRelic\Agent\Traits
  */
 trait HasHandlerTrait
 {

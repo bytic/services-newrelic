@@ -38,7 +38,6 @@ class NewRelicTest extends AbstractTest
         $dotenv->load();
 
         NewRelic::setAgent(new NewRelicAgent($handler));
-        NewRelic::initFromEnviroment();
 
         static::assertSame('MyApp ENV', NewRelic::getAppName());
         static::assertSame('123456789', NewRelic::getLicence());
