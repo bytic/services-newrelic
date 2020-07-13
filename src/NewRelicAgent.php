@@ -10,6 +10,7 @@ use ByTIC\NewRelic\Handler\Handler;
  */
 class NewRelicAgent
 {
+    use Agent\Traits\CanCollectErrorsTrait;
     use Agent\Traits\HasAppNameTrait;
     use Agent\Traits\HasConfigTrait;
     use Agent\Traits\HasHandlerTrait;

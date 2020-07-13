@@ -12,6 +12,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/bytic/newrelic.svg?style=flat-square)](https://packagist.org/packages/bytic/newrelic)
 
 ### Inspiration
+https://github.com/newrelic/newrelic-monolog-logenricher-php
+
 https://github.com/In-Touch/laravel-newrelic
 https://github.com/In-Touch/newrelic
 https://github.com/ekino/EkinoNewRelicBundle

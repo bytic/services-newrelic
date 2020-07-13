@@ -3,6 +3,7 @@
 namespace ByTIC\NewRelic\Middleware;
 
 use ByTIC\NewRelic\NewRelicAgent;
+use ByTIC\NewRelic\Utility\HasNewRelicAgent;
 use Nip\Http\ServerMiddleware\Middlewares\ServerMiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -14,12 +15,7 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 class NewRelicMiddleware implements ServerMiddlewareInterface
 {
-    /**
-     * The NewRelicAgent instance
-     *
-     * @var NewRelicAgent
-     */
-    protected $newRelicAgent;
+    use HasNewRelicAgent;
 
     /**
      * Create a new session middleware.
