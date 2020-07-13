@@ -17,13 +17,16 @@ trait HasNewRelicAgent
      *
      * @var NewRelicAgent
      */
-    protected $newRelicAgent;
+    protected $newRelicAgent = null;
 
     /**
      * @return NewRelicAgent
      */
     public function getNewRelicAgent(): NewRelicAgent
     {
+        if ($this->newRelicAgent === null) {
+            $this->setNewRelicAgent(NewRelic::getAgent());
+        }
         return $this->newRelicAgent;
     }
 

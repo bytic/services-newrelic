@@ -31,10 +31,14 @@ class Handler extends AbstractProcessingHandler
     {
         if (isset($record['context']['exception']) && $record['context']['exception'] instanceof \Throwable) {
             $this->getNewRelicAgent()->sendThrowable($record['context']['exception']);
-            unset($record['formatted']['context']['exception']);
-        } else {
-            $this->getNewRelicAgent()->sendErrorMessage($record['message']);
+            return;
         }
+        if (is_string($record['formatted'])) {
+            $this->getNewRelicAgent()->sendErrorMessage($record['formatted']);
+            return;
+        }
+
+        $this->getNewRelicAgent()->sendErrorMessage($record['message']);
     }
 
     /**
