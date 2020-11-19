@@ -27,7 +27,7 @@
     "psr/http-message": "^1.0"
   },
   "require-dev": {
-    "bytic/container": "^0.9|^1.0",
+    "bytic/container": "^2.0.1",
     "bytic/http": "^0.9|^1.0",
     "monolog/monolog": "^1.2|^2.0",
     "vlucas/phpdotenv": "^5.0",
