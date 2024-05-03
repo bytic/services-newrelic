@@ -6,6 +6,7 @@ use ByTIC\NewRelic\Utility\HasNewRelicAgent;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\Handler\AbstractProcessingHandler;
+use Monolog\LogRecord;
 
 /**
  * Class Handler
@@ -15,7 +16,7 @@ class Handler extends AbstractProcessingHandler
 {
     use HasNewRelicAgent;
 
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         if (!$this->getNewRelicAgent()->isInstalled()) {
             return;
@@ -27,7 +28,7 @@ class Handler extends AbstractProcessingHandler
     /**
      * @param array $record
      */
-    protected function sendToAgent(array $record)
+    protected function sendToAgent(LogRecord $record)
     {
         if (isset($record['context']['exception']) && $record['context']['exception'] instanceof \Throwable) {
             $this->getNewRelicAgent()->sendThrowable($record['context']['exception']);
